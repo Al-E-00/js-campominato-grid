@@ -21,8 +21,7 @@ let btnPlay = document.getElementById("play-button");
 // funzione per reset griglia
 // non funziona
 function cleanGrid () {
-    const cell = document.createElement("div");
-    cell.classList.remove("cell");
+    gridContainer.innerHTML = "";
 }
 //funzione per selezionare la difficoltà 
 function difficulty () {
@@ -64,7 +63,7 @@ function gameGrid (xCells, yCells) {
         //aggiungo un event listener sulle celle
 
         cell.addEventListener("click", function() {
-            cell.classList.add("bg-primary");
+            cell.classList.toggle("bg-primary");
         })
 
         //aggiungo le varie caselle tante volte quante il ciclo si ripete
